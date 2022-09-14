@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     static String original = new String("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
@@ -16,6 +14,8 @@ public class Main {
         char keyMax = '\0';
         char keyMin = '\0';
         Map<Character, Integer> textMap = new HashMap<>();
+        Set<Character> textSet = new HashSet<>();
+
         for (int i = 0; i < text.length(); i++) {
             char myChar = text.charAt(i);
 
@@ -24,7 +24,6 @@ public class Main {
                     textMap.put(myChar, 1);
                 } else {
                     int value = textMap.get(myChar);
-                    textMap.remove(myChar);
                     textMap.put(myChar, value + 1);
                 }
             }
